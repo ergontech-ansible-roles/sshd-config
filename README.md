@@ -6,7 +6,11 @@ Role Variables
 --------------
 
 ```
-# Any Vars?
+# Change to no to disable tunnelled clear text passwords
+password_authentication: 'no'
+
+# Authentication:
+permit_root_login: prohibit-password
 ```
 
 ----------------

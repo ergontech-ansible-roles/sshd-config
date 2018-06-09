@@ -1,2 +1,19 @@
 ---
 
+- name: Ensure ssh package installed and up to date
+  become: yes
+  apt:
+    name: ssh
+    state: present
+  tags:
+    - ssh
+    - packages
+
+- name: Configure sshd
+  become: yes
+  template:
+    src: templates/sshd_config.j2
+    dest: /etc/ssh/sshd_config
+    mode: 0644
+  tags:
+    - ssh
